@@ -9,14 +9,16 @@ AniseF/ISD-e-Frames
 
 ## Estrutura
 
-```text
-ISD_e_Frames/
+```ISD_e_Frames/
+│
 ├── app.py
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
+│
 └── .streamlit/
-    └── secrets.toml   # NÃO enviar ao GitHub
+    ├── config.toml
+    └── secrets.toml.example
 ```
 
 ## Dependências

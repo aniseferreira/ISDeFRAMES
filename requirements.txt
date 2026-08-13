@@ -1,0 +1,6 @@
+streamlit>=1.41,<2
+transformers>=4.45,<5
+torch>=2.6,<3
+sacremoses>=0.1
+sentencepiece>=0.2
+huggingface_hub>=0.30,<2

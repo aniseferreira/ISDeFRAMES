@@ -124,7 +124,7 @@ def run_chat(prompt, text, max_tokens):
 st.sidebar.header("📝 Contexto Inicial Declarado")
 
 st.sidebar.markdown(
-    "<p style='font-size: 16px; font-weight: bold; margin-bottom: -10px;'>"
+    "<p style='font-size: 16px; font-weight: bold; margin-bottom: 8px;'>"
     "Idioma do Corpus</p>",
     unsafe_allow_html=True,
 )
@@ -136,7 +136,7 @@ idioma = st.sidebar.selectbox(
 )
 
 st.sidebar.markdown(
-    "<p style='font-size: 16px; font-weight: bold; margin-bottom: -10px;'>"
+    "<p style='font-size: 16px; font-weight: bold; margin-bottom: 8px;'>"
     "Estatuto do Autor/Emissor</p>",
     unsafe_allow_html=True,
 )
@@ -148,7 +148,7 @@ autor = st.sidebar.text_input(
 )
 
 st.sidebar.markdown(
-    "<p style='font-size: 16px; font-weight: bold; margin-bottom: -10px;'>"
+    "<p style='font-size: 16px; font-weight: bold; margin-bottom: 8px;'>"
     "Objetivo Estimado</p>",
     unsafe_allow_html=True,
 )

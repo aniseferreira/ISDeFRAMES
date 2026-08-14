@@ -19,7 +19,7 @@ st.set_page_config(
     layout="wide",
 )
 
-col_logo, col_titulo = st.columns([1, 5])
+col_logo, col_titulo = st.columns([1.2, 7])
 
 with col_logo:
     st.image("assets/logo.png", width=100)

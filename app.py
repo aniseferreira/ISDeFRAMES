@@ -19,17 +19,41 @@ st.set_page_config(
     layout="wide",
 )
 
-col_logo, col_titulo = st.columns([1.2, 7])
-
-with col_logo:
-    st.image("assets/logo.png", width=100)
-
-with col_titulo:
-    st.title("Analisador Linguístico Avançado (PT / FR)")
-    st.subheader(
-        "Arquitetura Textual do ISD (Bronckart) + "
-        "Semântica de Frames (Fillmore)"
-    )
+st.markdown(
+    """
+    <div style="
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 10px;
+    ">
+        <img src="assets/logo.png"
+             style="
+                 width: 85px;
+                 height: 85px;
+                 object-fit: contain;
+             ">
+        <div>
+            <h1 style="
+                margin: 0;
+                padding: 0;
+                font-size: 2.5rem;
+                line-height: 1.15;
+            ">
+                Analisador Linguístico Avançado (PT / FR)
+            </h1>
+            <div style="
+                font-size: 1.15rem;
+                margin-top: 8px;
+            ">
+                Arquitetura Textual do ISD (Bronckart) +
+                Semântica de Frames (Fillmore)
+            </div>
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 # ------------------------------------------------------------
 # 1. Hugging Face token

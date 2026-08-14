@@ -162,8 +162,9 @@ objetivo_input = st.sidebar.text_input(
 st.sidebar.markdown("---")
 st.sidebar.caption(
     "Idealizado por Anise d'Orange Ferreira. "
-    "Desenvolvimento realizado com assistência da IA generativa (LLM Gemini 1.5 Pro) para a plataforma Hugging Face. " 
-    "Adaptado pelo GPT 5.6 para a plataforma Streamlit, com código armazenado no GitHub. "
+    "Desenvolvimento realizado com assistência " 
+    "da IA generativa (LLM Gemini 1.5 Pro) para a plataforma Hugging Face. " 
+    "Adaptado pelo GPT 5.6 para a plataforma Streamlit usando GitHub. "
 )
 
 

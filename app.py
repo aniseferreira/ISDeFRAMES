@@ -19,10 +19,10 @@ st.set_page_config(
     layout="wide",
 )
 
-col_logo, col_titulo = st.columns([1, 8])
+col_logo, col_titulo = st.columns([1, 5])
 
 with col_logo:
-    st.image("assets/logo.png", width=80)
+    st.image("assets/logo.png", width=100)
 
 with col_titulo:
     st.title("Analisador Linguístico Avançado (PT / FR)")

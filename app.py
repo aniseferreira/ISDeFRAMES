@@ -27,7 +27,7 @@ st.markdown(
         gap: 18px;
         margin-bottom: 10px;
     ">
-        <img src="assets/logo.png"
+        <img src="assets/icone.png"
              style="
                  width: 85px;
                  height: 85px;

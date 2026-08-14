@@ -19,9 +19,17 @@ st.set_page_config(
     layout="wide",
 )
 
-st.title("🔬 Analisador Linguístico Avançado (PT / FR)")
-st.subheader("Arquitetura Textual do ISD (Bronckart) + Semântica de Frames (Fillmore)")
+col_logo, col_titulo = st.columns([1, 8])
 
+with col_logo:
+    st.image("assets/icone.png", width=80)
+
+with col_titulo:
+    st.title("Analisador Linguístico Avançado (PT / FR)")
+    st.subheader(
+        "Arquitetura Textual do ISD (Bronckart) + "
+        "Semântica de Frames (Fillmore)"
+    )
 
 # ------------------------------------------------------------
 # 1. Hugging Face token

@@ -15,7 +15,7 @@ from transformers import pipeline
 
 st.set_page_config(
     page_title="Analisador Multilíngue ISD & FrameNet",
-    page_icon="🔬",
+    page_icon="assets/favicon.png",
     layout="wide",
 )
 

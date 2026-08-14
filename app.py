@@ -1,6 +1,6 @@
 import json
 import os
-
+import base64
 import streamlit as st
 from huggingface_hub import InferenceClient
 from transformers import pipeline
@@ -19,18 +19,21 @@ st.set_page_config(
     layout="wide",
 )
 
+with open("assets/icone.png", "rb") as f:
+    logo_base64 = base64.b64encode(f.read()).decode()
+
 st.markdown(
-    """
+    f"""
     <div style="
         display: flex;
         align-items: center;
-        gap: 18px;
+        gap: 12px;
         margin-bottom: 10px;
     ">
-        <img src="assets/icone.png"
+        <img src="data:image/png;base64,{logo_base64}"
              style="
-                 width: 85px;
-                 height: 85px;
+                 width: 90px;
+                 height: 90px;
                  object-fit: contain;
              ">
         <div>

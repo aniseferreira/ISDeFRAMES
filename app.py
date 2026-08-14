@@ -22,7 +22,7 @@ st.set_page_config(
 col_logo, col_titulo = st.columns([1, 8])
 
 with col_logo:
-    st.image("assets/icone.png", width=80)
+    st.image("assets/logo.png", width=80)
 
 with col_titulo:
     st.title("Analisador Linguístico Avançado (PT / FR)")

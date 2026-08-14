@@ -209,7 +209,7 @@ st.sidebar.caption(
 # ------------------------------------------------------------
 st.markdown(
     "<p style='font-size: 18px; font-weight: bold; margin-bottom: 5px;'>"
-    "Insira o fragmento de texto para análise em Português ou Francês</p>",
+    "Insira para análise o fragmento de texto em Português ou Francês</p>",
     unsafe_allow_html=True,
 )
 

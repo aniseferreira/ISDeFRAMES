@@ -10,6 +10,7 @@ from transformers import pipeline
 # ISD & FrameNet — Streamlit
 # Adapted from the Hugging Face Space:
 # AniseF/ISD-e-Frames
+# LICENÇA CC BY-SA 4.0
 # ============================================================
 
 st.set_page_config(
@@ -161,10 +162,10 @@ objetivo_input = st.sidebar.text_input(
 
 st.sidebar.markdown("---")
 st.sidebar.caption(
-    "Idealizado por Anise d'Orange Ferreira. "
+    "©️2026 Idealizado por Anise d'Orange Ferreira. CC BY-SA 4.0 "
     "Desenvolvimento realizado com assistência " 
-    "da IA generativa (LLM Gemini 1.5 Pro) para a plataforma Hugging Face. " 
-    "Adaptado pelo GPT 5.6 para a plataforma Streamlit usando GitHub. "
+    "do Gemini 1.5 Pro para a plataforma Hugging Face. " 
+    "Assistido pelo GPT-5.6 Luna para a plataforma Streamlit usando GitHub. "
 )
 
 

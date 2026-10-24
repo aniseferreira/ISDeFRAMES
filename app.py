@@ -300,7 +300,7 @@ if st.button("Analisar Texto Completo", type="primary"):
             "descritiva, argumentativa, explicativa e injuntiva. "
             "Para cada sequência identificada, informe o tipo, um breve "
             "trecho literal que a exemplifique e uma justificativa concisa. "
-            "Não atribua porcentagens ou probabilidades. Não invente "
+            "Atribua porcentagens ou probabilidades. Não invente "
             "segmentos nem presuma que todas as sequências estejam presentes. "
             "Se não houver evidência suficiente, informe que a sequência "
             "não foi identificada. Não confunda as sequências de Adam com "
@@ -326,8 +326,12 @@ if st.button("Analisar Texto Completo", type="primary"):
             "ou implícitas.\n"
             " - 'modalizacoes': Classifique as marcas de avaliação, quando "
             "presentes, em Apreciativas, Lógicas, Deônticas ou Pragmáticas. "
+            "Classifique-as estritamente em suas subcategorias se houver: "
+            "Modalizações Apreciativas (julgamentos de valor/afetivos), "
+            "Lógicas (certeza, probabilidade, possibilidade), "
+            "Deônticas (dever, obrigação, permissão) ou "
+            "Pragmáticas (utilidade, eficácia, responsabilidade). "
             "Indique os itens lexicais exatos do texto.\n\n"
-
             
             "Estrutura EXATA do JSON esperado:\n"
             "{\n"

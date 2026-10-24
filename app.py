@@ -266,7 +266,7 @@ if st.button("Analisar Texto Completo", type="primary"):
         prompt_isd = (
             "Você é um linguista sênior especialista no "
             "Interacionismo Sociodiscursivo (ISD) de Jean-Paul Bronckart "
-            "e sequências textuais de Jean-Michel Adam.\n"
+            "e Jean-Michel Adam.\n"
             f"Analise o texto considerando que o autor declarado é "
             f"'{autor}' e o objetivo estimado é '{objetivo_input}'.\n"
             "Responda EXCLUSIVAMENTE em formato JSON estrito, sem markdown, "

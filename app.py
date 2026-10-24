@@ -214,7 +214,7 @@ st.markdown(
 )
 
 texto_input = st.text_area(
-    "",
+    "Texto para análise",
     height=200,
     placeholder="Digite ou cole seu texto aqui...",
     label_visibility="collapsed",
@@ -279,23 +279,17 @@ if st.button("Analisar Texto Completo", type="primary"):
             "com base nas características sociodiscursivas).\n\n"
 
             
-            "2. 'sequencias_textuais': Identifique as sequências textuais "
-            "presentes no texto, segundo a tipologia de Jean-Michel Adam: "
-            "narrativa, descritiva, argumentativa, explicativa e injuntiva. "
-            "Para cada sequência identificada, apresente: (a) o tipo de "
-            "sequência; (b) o segmento exato do texto que fundamenta a "
-            "classificação; (c) uma justificativa baseada nas características "
-            "linguísticas e na organização textual do segmento. "
-            "Quando possível, indique o início e o fim de cada segmento. "
-            "Se houver ambiguidade entre tipos de sequência, explicite-a e "
-            "justifique a interpretação adotada. Não presuma que todas as "
-            "sequências estejam presentes em todos os textos. Quando não "
-            "houver evidência suficiente, indique 'indeterminado' e explique "
-            "o motivo. Não atribua porcentagens, probabilidades ou valores "
-            "numéricos às sequências. Distinga a sequência predominante das "
-            "secundárias somente quando houver evidências textuais e critérios "
-            "explícitos que sustentem essa distinção.\\n\\n"
-
+            "2. 'sequencias_textuais': Identifique, no texto, evidências "
+            "das sequências textuais de Jean-Michel Adam: narrativa, "
+            "descritiva, argumentativa, explicativa e injuntiva. "
+            "Para cada sequência identificada, informe o tipo, um breve "
+            "trecho literal que a exemplifique e uma justificativa concisa. "
+            "Não atribua porcentagens ou probabilidades. Não invente "
+            "segmentos nem presuma que todas as sequências estejam presentes. "
+            "Se não houver evidência suficiente, informe que a sequência "
+            "não foi identificada. Não confunda as sequências de Adam com "
+            "os tipos de discurso de Bronckart. "
+            "Seja conciso e respeite o formato JSON solicitado.\\n\\n"
 
             "3. 'mecanismos_textualizacao':\n"
             " - Foque apenas na amarração linear do texto. "

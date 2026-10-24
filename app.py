@@ -300,7 +300,7 @@ if st.button("Analisar Texto Completo", type="primary"):
             "descritiva, argumentativa, explicativa e injuntiva. "
             "Para cada sequência identificada, informe o tipo, um breve "
             "trecho literal que a exemplifique e uma justificativa concisa. "
-            "Atribua porcentagens ou probabilidades. Não invente "
+            "Não atribua porcentagens ou probabilidades. Não invente "
             "segmentos nem presuma que todas as sequências estejam presentes. "
             "Se não houver evidência suficiente, informe que a sequência "
             "não foi identificada. Não confunda as sequências de Adam com "

@@ -328,19 +328,22 @@ if st.button("Analisar Texto Completo", type="primary"):
             "presentes, em Apreciativas, Lógicas, Deônticas ou Pragmáticas. "
             "Indique os itens lexicais exatos do texto.\n\n"
 
+            
             "Estrutura EXATA do JSON esperado:\n"
             "{\n"
             '  "contexto_produção": {'
             '"emissor": "", "receptor": "", "suporte_circulacao": "", '
             '"objetivo_sociedade": "", "genero_textual": ""},\n'
-            '  "sequencias_textuais": {'
-            '"narrativa": 0, "descritiva": 0, "argumentativa": 0, '
-            '"explicativa": 0, "injuntiva": 0},\n'
+            '  "mundo_discursivo": {'
+            '"tipo_discurso": "", "ordem": "", "justificativa": ""},\n'
+            '  "sequencias_textuais": ['
+            '{"tipo": "", "evidencia_textual": "", "justificativa": ""}],\n'
             '  "mecanismos_textualizacao": {'
             '"coesao_nominal": "", "coesao_verbal": ""},\n'
             '  "mecanismos_enunciativos": {'
             '"gerenciamento_vozes": "", "modalizacoes": ""}\n'
             "}"
+
         )
 
         with st.spinner("Decodificando camadas do ISD..."):

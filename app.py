@@ -91,7 +91,7 @@ def get_client(token):
         return None
 
     return InferenceClient(
-        model="Qwen/Qwen2.5-72B-Instruct",
+        model="Qwen/Qwen2.5-7B-Instruct",
         token=token,
     )
 

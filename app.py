@@ -266,7 +266,7 @@ if st.button("Analisar Texto Completo", type="primary"):
         prompt_isd = (
             "Você é um linguista sênior especialista no "
             "Interacionismo Sociodiscursivo (ISD) de Jean-Paul Bronckart "
-            "e Jean-Michel Adam.\n"
+            "e sequências textuais de Jean-Michel Adam.\n"
             f"Analise o texto considerando que o autor declarado é "
             f"'{autor}' e o objetivo estimado é '{objetivo_input}'.\n"
             "Responda EXCLUSIVAMENTE em formato JSON estrito, sem markdown, "
@@ -278,9 +278,24 @@ if st.button("Analisar Texto Completo", type="primary"):
             "(efeito na sociedade) e o 'genero_textual' (gênero específico "
             "com base nas características sociodiscursivas).\n\n"
 
-            "2. 'sequencias_textuais': Atribua porcentagens (0 a 100) "
-            "para a presença das 5 sequências de Jean-Michel Adam: "
-            "narrativa, descritiva, argumentativa, explicativa e injuntiva.\n\n"
+            
+            "2. 'sequencias_textuais': Identifique as sequências textuais "
+            "presentes no texto, segundo a tipologia de Jean-Michel Adam: "
+            "narrativa, descritiva, argumentativa, explicativa e injuntiva. "
+            "Para cada sequência identificada, apresente: (a) o tipo de "
+            "sequência; (b) o segmento exato do texto que fundamenta a "
+            "classificação; (c) uma justificativa baseada nas características "
+            "linguísticas e na organização textual do segmento. "
+            "Quando possível, indique o início e o fim de cada segmento. "
+            "Se houver ambiguidade entre tipos de sequência, explicite-a e "
+            "justifique a interpretação adotada. Não presuma que todas as "
+            "sequências estejam presentes em todos os textos. Quando não "
+            "houver evidência suficiente, indique 'indeterminado' e explique "
+            "o motivo. Não atribua porcentagens, probabilidades ou valores "
+            "numéricos às sequências. Distinga a sequência predominante das "
+            "secundárias somente quando houver evidências textuais e critérios "
+            "explícitos que sustentem essa distinção.\\n\\n"
+
 
             "3. 'mecanismos_textualizacao':\n"
             " - Foque apenas na amarração linear do texto. "

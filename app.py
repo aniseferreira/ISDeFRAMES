@@ -166,7 +166,7 @@ st.sidebar.markdown(
 )
 
 idioma = st.sidebar.selectbox(
-    "",
+    "Idioma do corpus",
     ["Português", "Français"],
     label_visibility="collapsed",
 )
@@ -178,7 +178,7 @@ st.sidebar.markdown(
 )
 
 autor = st.sidebar.text_input(
-    "",
+    "Estatuto do autor/emissor",
     placeholder="Ex.: Jornalista, Cientista...",
     label_visibility="collapsed",
 )
@@ -190,7 +190,7 @@ st.sidebar.markdown(
 )
 
 objetivo_input = st.sidebar.text_input(
-    "",
+    "Objetivo estimado",
     placeholder="Ex.: Persuadir, Denunciar...",
     label_visibility="collapsed",
 )
@@ -300,7 +300,7 @@ if st.button("Analisar Texto Completo", type="primary"):
             "descritiva, argumentativa, explicativa e injuntiva. "
             "Para cada sequência identificada, informe o tipo, um breve "
             "trecho literal que a exemplifique e uma justificativa concisa. "
-            "Atribua porcentagens ou probabilidades. Não invente "
+            "Não atribua porcentagens ou probabilidades. Não invente "
             "segmentos nem presuma que todas as sequências estejam presentes. "
             "Se não houver evidência suficiente, informe que a sequência "
             "não foi identificada. Não confunda as sequências de Adam com "
@@ -351,7 +351,7 @@ if st.button("Analisar Texto Completo", type="primary"):
                 texto_isd = run_chat(
                     prompt_isd,
                     texto_input,
-                    max_tokens=800,
+                    max_tokens=1200,
                 )
 
                 dados_isd = json.loads(clean_json_response(texto_isd))
@@ -384,25 +384,56 @@ if st.button("Analisar Texto Completo", type="primary"):
                 st.divider()
                 st.subheader("2. Infraestrutura: Mundos & Sequências")
 
-                if res:
+                # Exibir a classificação explicada pelo Qwen e, separadamente,
+                # a pontuação do classificador zero-shot mDeBERTa.
+                mundo = dados_isd.get("mundo_discursivo", {})
+                if isinstance(mundo, dict) and mundo:
                     st.write(
-                        "🔮 **Mundo Discursivo Predominante:** "
+                        "🔮 **Tipo de discurso (análise ISD):** "
+                        f"{mundo.get('tipo_discurso', 'Não identificado')}"
+                    )
+                    st.write(
+                        f"**Ordem:** {mundo.get('ordem', 'Não identificada')}"
+                    )
+                    st.write(
+                        f"**Justificativa:** {mundo.get('justificativa', 'Não fornecida')}"
+                    )
+
+                if res:
+                    st.caption(
+                        "Classificador zero-shot mDeBERTa — pontuação de compatibilidade, "
+                        "não uma probabilidade estatística calibrada:"
+                    )
+                    st.write(
                         f"{res['labels'][0]} "
                         f"({res['scores'][0] * 100:.1f}%)"
                     )
 
                 st.write("**Tipologia de Sequências (Adam):**")
+                sequencias = dados_isd.get("sequencias_textuais", [])
 
-                for seq, valor in dados_isd.get(
-                    "sequencias_textuais", {}
-                ).items():
-                    try:
-                        percentual = float(valor)
-                    except (TypeError, ValueError):
-                        percentual = 0.0
+                if isinstance(sequencias, list):
+                    if not sequencias:
+                        st.info("Nenhuma sequência textual foi identificada.")
+                    for item in sequencias:
+                        if not isinstance(item, dict):
+                            st.write(f"- {item}")
+                            continue
+                        tipo = item.get("tipo", "Tipo não identificado")
+                        evidencia = item.get("evidencia_textual", "")
+                        justificativa = item.get("justificativa", "")
+                        st.markdown(f"**{tipo.capitalize()}**")
+                        if evidencia:
+                            st.write(f"**Evidência textual:** “{evidencia}”")
+                        if justificativa:
+                            st.write(f"**Justificativa:** {justificativa}")
 
-                    st.text(f"- Sequência {seq.capitalize()}:")
-                    st.progress(max(0.0, min(1.0, percentual / 100)))
+                elif isinstance(sequencias, dict):
+                    # Compatibilidade com a antiga saída em dicionário.
+                    for seq, valor in sequencias.items():
+                        st.write(f"- **{seq.capitalize()}:** {valor}")
+                else:
+                    st.warning("Formato de sequências textuais inesperado.")
 
                 st.divider()
                 st.subheader("3. Mecanismos de Textualização")

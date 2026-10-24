@@ -250,8 +250,9 @@ if st.button("Analisar Texto Completo", type="primary"):
 
         labels = [
             "Discurso Teórico / Discours Théorique",
-            "Narração / Narration",
             "Discurso Interativo / Discours Interactif",
+            "Relato Interativo / Récit Interactif",
+            "Narração / Narration",
         ]
 
         try:
@@ -278,8 +279,23 @@ if st.button("Analisar Texto Completo", type="primary"):
             "(efeito na sociedade) e o 'genero_textual' (gênero específico "
             "com base nas características sociodiscursivas).\n\n"
 
+            "2. 'mundo_discursivo': Classifique o tipo de discurso segundo "
+            "o modelo de Jean-Paul Bronckart, considerando quatro tipos: "
+            "Discurso Teórico, Discurso Interativo, Relato Interativo "
+            "(francês: Récit Interactif) e Narração. "
+            "Distinga-os pela combinação entre conjunção ou disjunção "
+            "temporal e implicação ou autonomia em relação aos parâmetros "
+            "da situação de produção. O Discurso Teórico caracteriza-se "
+            "pela conjunção temporal e autonomia; o Discurso Interativo, "
+            "pela conjunção temporal e implicação; o Relato Interativo, "
+            "pela disjunção temporal e implicação; e a Narração, pela "
+            "disjunção temporal e autonomia. Justifique a classificação "
+            "com evidências linguísticas do texto. Não confunda os tipos "
+            "de discurso com os gêneros textuais ou com as sequências "
+            "textuais de Jean-Michel Adam.\\n\\n"
+
             
-            "2. 'sequencias_textuais': Identifique, no texto, evidências "
+            "3. 'sequencias_textuais': Identifique, no texto, evidências "
             "das sequências textuais de Jean-Michel Adam: narrativa, "
             "descritiva, argumentativa, explicativa e injuntiva. "
             "Para cada sequência identificada, informe o tipo, um breve "
@@ -291,7 +307,7 @@ if st.button("Analisar Texto Completo", type="primary"):
             "os tipos de discurso de Bronckart. "
             "Seja conciso e respeite o formato JSON solicitado.\\n\\n"
 
-            "3. 'mecanismos_textualizacao':\n"
+            "4. 'mecanismos_textualizacao':\n"
             " - Foque apenas na amarração linear do texto. "
             "Não misture com vozes ou opiniões.\n"
             " - 'coesao_nominal': Analise as cadeias de referência "
@@ -300,7 +316,7 @@ if st.button("Analisar Texto Completo", type="primary"):
             " - 'coesao_verbal': Analise a ordenação e a correlação dos "
             "tempos verbais e seu papel na progressão textual.\n\n"
 
-            "4. 'mecanismos_enunciativos':\n"
+            "5. 'mecanismos_enunciativos':\n"
             " - Identifique como a subjetividade e as perspectivas são "
             "encenadas.\n"
             " - 'gerenciamento_vozes': Identifique a polifonia textual. "

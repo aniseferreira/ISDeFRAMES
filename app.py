@@ -50,7 +50,7 @@ st.markdown(
                 margin-top: 8px;
             ">
                 Arquitetura Textual do ISD (Bronckart) +
-                Semântica de Frames (Fillmore)
+                Semântica de Frames (Fillmore) & FrameNets
             </div>
         </div>
     </div>
@@ -206,8 +206,7 @@ st.sidebar.caption(
     "©️2026 Idealizado por Anise d'Orange Ferreira. Licença MIT "
     "Desenvolvimento realizado com assistência " 
     "do Gemini 1.5 Pro para a plataforma Hugging Face. " 
-    "Assistido pelo GPT-5.6 Luna para a plataforma Streamlit usando GitHub. "
-    "Com ajustes pontuais para eventuais erros por ambos os modelos."
+    "Assistido pelo GPT-5.6 Luna e Gemini 1.5 Pro para a plataforma Streamlit usando GitHub. "
 )
 
 

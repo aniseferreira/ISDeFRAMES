@@ -207,6 +207,7 @@ st.sidebar.caption(
     "Desenvolvimento realizado com assistência " 
     "do Gemini 1.5 Pro para a plataforma Hugging Face. " 
     "Assistido pelo GPT-5.6 Luna para a plataforma Streamlit usando GitHub. "
+    "Com ajustes pontuais para eventuais erros por ambos os modelos."
 )
 
 

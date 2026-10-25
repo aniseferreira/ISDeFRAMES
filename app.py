@@ -119,7 +119,7 @@ classifier = None
 # 4. Funções auxiliares
 # ------------------------------------------------------------
 def clean_json_response(text):
-    """Remove cercas Markdown caso o LLM devolva ```json ... ```."""
+    """Remove cercas Markdown e extrai o bloco JSON entre '{' e '}'."""
     text = text.strip()
 
     if text.startswith("```"):
@@ -132,6 +132,12 @@ def clean_json_response(text):
             lines = lines[:-1]
 
         text = "\n".join(lines).strip()
+
+    # Isola o objeto JSON delimitado por { ... }
+    start = text.find("{")
+    end = text.rfind("}")
+    if start != -1 and end != -1 and end > start:
+        text = text[start : end + 1]
 
     return text
 
@@ -292,9 +298,8 @@ if st.button("Analisar Texto Completo", type="primary"):
             "disjunção temporal e autonomia. Justifique a classificação "
             "com evidências linguísticas do texto. Não confunda os tipos "
             "de discurso com os gêneros textuais ou com as sequências "
-            "textuais de Jean-Michel Adam.\\n\\n"
+            "textuais de Jean-Michel Adam.\n\n"
 
-            
             "3. 'sequencias_textuais': Identifique, no texto, evidências "
             "das sequências textuais de Jean-Michel Adam: narrativa, "
             "descritiva, argumentativa, explicativa e injuntiva. "
@@ -305,7 +310,7 @@ if st.button("Analisar Texto Completo", type="primary"):
             "Se não houver evidência suficiente, informe que a sequência "
             "não foi identificada. Não confunda as sequências de Adam com "
             "os tipos de discurso de Bronckart. "
-            "Seja conciso e respeite o formato JSON solicitado.\\n\\n"
+            "Seja conciso e respeite o formato JSON solicitado.\n\n"
 
             "4. 'mecanismos_textualizacao':\n"
             " - Foque apenas na amarração linear do texto. "
@@ -347,7 +352,6 @@ if st.button("Analisar Texto Completo", type="primary"):
             '  "mecanismos_enunciativos": {'
             '"gerenciamento_vozes": "", "modalizacoes": ""}\n'
             "}"
-
         )
 
         with st.spinner("Decodificando camadas do ISD..."):
@@ -358,7 +362,7 @@ if st.button("Analisar Texto Completo", type="primary"):
                     max_tokens=1200,
                 )
 
-                dados_isd = json.loads(clean_json_response(texto_isd))
+                dados_isd = json.loads(clean_json_response(texto_isd), strict=False)
 
                 st.subheader("1. Contexto de Produção Pragmático")
 
@@ -517,7 +521,8 @@ if st.button("Analisar Texto Completo", type="primary"):
                 )
 
                 dados_frame = json.loads(
-                    clean_json_response(texto_frame)
+                    clean_json_response(texto_frame),
+                    strict=False
                 )
 
                 st.success(

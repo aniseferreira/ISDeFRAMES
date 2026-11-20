@@ -43,7 +43,7 @@ st.markdown(
                 font-size: 2.5rem;
                 line-height: 1.15;
             ">
-                Analisador Linguístico Avançado (PT / FR)
+                Analisador Linguístico voltado para Gêneros de Texto (PT / FR)
             </h1>
             <div style="
                 font-size: 1.15rem;

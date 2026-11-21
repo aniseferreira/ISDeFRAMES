@@ -43,14 +43,14 @@ st.markdown(
                 font-size: 2.5rem;
                 line-height: 1.15;
             ">
-                Analisador Linguístico voltado para Gêneros de Texto (PT / FR)
+                Analisador Linguístico Avançado (PT / FR)
             </h1>
             <div style="
                 font-size: 1.15rem;
                 margin-top: 8px;
             ">
                 Arquitetura Textual do ISD (Bronckart) +
-                Semântica de Frames (Fillmore) & FrameNets
+                Semântica de Frames (Fillmore)
             </div>
         </div>
     </div>
@@ -206,7 +206,7 @@ st.sidebar.caption(
     "©️2026 Idealizado por Anise d'Orange Ferreira. Licença MIT "
     "Desenvolvimento realizado com assistência " 
     "do Gemini 1.5 Pro para a plataforma Hugging Face. " 
-    "Assistido pelo GPT-5.6 Luna e Gemini 1.5 Pro para a plataforma Streamlit usando GitHub. "
+    "Assistido pelo GPT-5.6 Luna para a plataforma Streamlit usando GitHub. "
 )
 
 
